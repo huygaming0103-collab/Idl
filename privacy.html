@@ -11,19 +11,16 @@
         .container { max-width: 900px; margin: auto; background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
         .nav a { color: var(--text); text-decoration: none; padding: 8px 16px; border-radius: 8px; transition: 0.3s; font-size: 0.9em; border: 1px solid transparent; }
-        .nav a:hover { background: var(--border); color: var(--accent); }
-        .nav a.active { border-color: var(--accent); color: var(--accent); background: rgba(88, 166, 255, 0.1); }
-        h1 { font-size: 2em; color: var(--primary); text-align: center; margin-bottom: 10px; letter-spacing: 1px; }
-        .last-updated { text-align: center; font-size: 0.8em; color: #8b949e; margin-bottom: 40px; }
-        .policy-section { margin-bottom: 35px; padding: 20px; border-radius: 12px; transition: 0.3s; border: 1px solid transparent; }
-        .policy-section:hover { background: #1c2128; border-color: var(--border); }
-        h2 { color: var(--accent); font-size: 1.3em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        ul { padding-left: 18px; list-style-type: square; }
-        li { margin-bottom: 12px; }
+        .nav a:hover { background: var(--border); color: var(--primary); }
+        .nav a.active { border-color: var(--primary); color: var(--primary); background: rgba(240, 136, 62, 0.1); }
+        h1 { font-size: 2em; color: var(--primary); text-align: center; margin-bottom: 10px; text-transform: uppercase; }
+        h2 { color: var(--accent); font-size: 1.3em; margin-bottom: 15px; border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 30px; }
+        ul { padding-left: 18px; }
+        li { margin-bottom: 10px; }
+        .lang-sep { border-top: 2px dashed var(--border); margin: 50px 0; position: relative; }
+        .lang-sep span { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--card); padding: 0 15px; color: #8b949e; font-weight: bold; }
+        .footer { text-align: center; margin-top: 50px; color: #8b949e; font-size: 0.9em; }
         b { color: #fff; }
-        .badge { background: rgba(240, 136, 62, 0.1); color: var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600; }
-        .footer { text-align: center; margin-top: 50px; border-top: 1px solid var(--border); padding-top: 30px; color: #8b949e; font-size: 0.9em; }
-        @media (max-width: 600px) { .container { padding: 20px; } h1 { font-size: 1.5em; } }
     </style>
 </head>
 <body>
@@ -34,53 +31,47 @@
         </div>
 
         <h1>🛡️ Chính Sách Bảo Mật</h1>
-        <div class="last-updated">Cập nhật lần cuối: 18 Tháng 2, 2026</div>
+        
+        <h2>01. Thu Thập Dữ Liệu</h2>
+        <ul>
+            <li>Chúng tôi chỉ lưu trữ thông tin công khai từ Discord: <b>User ID, Username, Global Name</b> và <b>Avatar URL</b>.</li>
+            <li>Dữ liệu kinh tế (Xu, Streak 🔥) được lưu trữ cục bộ trong tệp <code>users.json</code> trên hệ thống Termux.</li>
+        </ul>
 
-        <div class="policy-section">
-            <h2>01. Phạm Vi Thu Thập Dữ Liệu</h2>
-            <p>Khi bạn tương tác với <b>V I P DRAGON</b>, chúng tôi chỉ thu thập các thông tin cần thiết nhất để duy trì trải nghiệm:</p>
-            <ul>
-                <li><b>Định danh Discord:</b> User ID, Username và Global Name để quản lý hồ sơ.</li>
-                <li><b>Dữ liệu Kinh tế:</b> Số dư xu, chuỗi điểm danh 🔥, và lịch sử giao dịch được lưu tại <code>users.json</code>.</li>
-                <li><b>Hình ảnh:</b> Avatar URL (chỉ dùng để hiển thị trong các lệnh profile).</li>
-            </ul>
-        </div>
+        <h2>02. Sử Dụng Thông Tin</h2>
+        <ul>
+            <li>Dữ liệu được dùng để vận hành các tính năng của Bot (Lệnh <code>Dme</code>, <code>Dcash</code>).</li>
+            <li>Cam kết <b>không bao giờ</b> bán hoặc chia sẻ dữ liệu cho bên thứ ba.</li>
+        </ul>
 
-        <div class="policy-section">
-            <h2>02. Cách Thức Sử Dụng Dữ Liệu</h2>
-            <ul>
-                <li>Vận hành các tính năng cốt lõi (Economy, XP, Game).</li>
-                <li>Xác minh danh tính người dùng để chống các hành vi <span class="badge">Abuse Bug</span> hoặc gian lận.</li>
-                <li><span style="color: #ff7b72;">Không bao giờ</span> bán dữ liệu hoặc sử dụng cho mục đích quảng cáo bên ngoài Discord.</li>
-            </ul>
-        </div>
+        <h2>03. Quyền Của Người Dùng</h2>
+        <ul>
+            <li>Bạn có quyền kiểm tra hoặc yêu cầu xóa hoàn toàn dữ liệu cá nhân khỏi hệ thống bằng cách liên hệ với Ban Quản Trị.</li>
+        </ul>
 
-        <div class="policy-section">
-            <h2>03. Lưu Trữ & An Toàn Tuyệt Đối</h2>
-            <ul>
-                <li><b>Local Storage:</b> Dữ liệu được lưu trữ cục bộ trên hệ thống <b>Termux</b> mã hóa riêng tư.</li>
-                <li><b>GitHub Safety:</b> Chúng tôi tuân thủ quy tắc bảo mật, không đẩy các file chứa Token hoặc dữ liệu người dùng lên GitHub công khai.</li>
-                <li><b>Tự động hóa:</b> Hệ thống tự động sao lưu dữ liệu mỗi 24 giờ để tránh mất mát.</li>
-            </ul>
-        </div>
+        <div class="lang-sep"><span>ENGLISH VERSION</span></div>
 
-        <div class="policy-section">
-            <h2>04. Quyền Hạn Của Bạn</h2>
-            <p>Bạn có toàn quyền kiểm soát dữ liệu cá nhân của mình:</p>
-            <ul>
-                <li><b>Truy xuất:</b> Xem toàn bộ dữ liệu đang lưu qua lệnh <code>Dme</code>.</li>
-                <li><b>Xóa bỏ:</b> Yêu cầu xóa vĩnh viễn dữ liệu khỏi hệ thống thông qua Ban Quản Trị.</li>
-                <li><b>Từ chối:</b> Bạn có quyền ngừng sử dụng Bot và yêu cầu gỡ bỏ thông tin bất cứ lúc nào.</li>
-            </ul>
-        </div>
+        <h1 style="color: #8b949e;">🛡️ Privacy Policy</h1>
 
-        <div class="policy-section">
-            <h2>05. Quy Định Về Độ Tuổi</h2>
-            <p>Bot tuân thủ Điều khoản của Discord. Người dùng dưới 13 tuổi (hoặc độ tuổi tối thiểu theo luật quốc gia) không được phép cung cấp thông tin cá nhân cho Bot.</p>
-        </div>
+        <h2 style="color: #58a6ff; border-color: #58a6ff;">01. Data Collection</h2>
+        <ul>
+            <li>We only store public information from Discord: <b>User ID, Username, Global Name</b>, and <b>Avatar URL</b>.</li>
+            <li>Economy data (Coins, Streak 🔥) is stored locally in the <code>users.json</code> file on our Termux system.</li>
+        </ul>
+
+        <h2 style="color: #58a6ff; border-color: #58a6ff;">02. Data Usage</h2>
+        <ul>
+            <li>Data is used solely to operate Bot features (Commands like <code>Dme</code>, <code>Dcash</code>).</li>
+            <li>We strictly <b>never</b> sell or share your data with any third parties.</li>
+        </ul>
+
+        <h2 style="color: #58a6ff; border-color: #58a6ff;">03. User Rights</h2>
+        <ul>
+            <li>You have the right to access or request the complete deletion of your personal data from our system by contacting the Administration.</li>
+        </ul>
 
         <div class="footer">
-            © 2026 V I P DRAGON • Hệ thống vận hành trên Vercel & Termux
+            © 2026 V I P DRAGON BOT • Secured Privacy Policy
         </div>
     </div>
 </body>
