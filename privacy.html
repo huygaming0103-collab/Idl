@@ -4,76 +4,1021 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chính Sách Bảo Mật | V I P DRAGON</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Chính sách bảo mật chính thức của V I P DRAGON Bot - Cam kết bảo vệ dữ liệu người dùng.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #f0883e; --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --border: #30363d; --accent: #58a6ff; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.8; }
-        .container { max-width: 900px; margin: auto; background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-        .nav a { color: var(--text); text-decoration: none; padding: 8px 16px; border-radius: 8px; transition: 0.3s; font-size: 0.9em; border: 1px solid transparent; }
-        .nav a:hover { background: var(--border); color: var(--primary); }
-        .nav a.active { border-color: var(--primary); color: var(--primary); background: rgba(240, 136, 62, 0.1); }
-        h1 { font-size: 2em; color: var(--primary); text-align: center; margin-bottom: 10px; text-transform: uppercase; }
-        h2 { color: var(--accent); font-size: 1.3em; margin-bottom: 15px; border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 30px; }
-        ul { padding-left: 18px; }
-        li { margin-bottom: 10px; }
-        .lang-sep { border-top: 2px dashed var(--border); margin: 50px 0; position: relative; }
-        .lang-sep span { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--card); padding: 0 15px; color: #8b949e; font-weight: bold; }
-        .footer { text-align: center; margin-top: 50px; color: #8b949e; font-size: 0.9em; }
-        b { color: #fff; }
+        :root {
+            --primary: #58a6ff;
+            --bg: #080c12;
+            --bg2: #0d1117;
+            --card: #161b22;
+            --card2: #1c2333;
+            --text: #c9d1d9;
+            --text-dim: #8b949e;
+            --border: #30363d;
+            --accent: #f0883e;
+            --accent2: #e05a2b;
+            --green: #3fb950;
+            --red: #f85149;
+            --purple: #a371f7;
+            --teal: #39d0d8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--teal), var(--primary), #7b68ee);
+            z-index: 9999;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(8, 12, 18, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+            padding: 0 20px;
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+        }
+
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent2), var(--accent), #ffd54f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .nav-links { display: flex; gap: 8px; }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            border-color: rgba(240,136,62,0.3);
+            background: rgba(240,136,62,0.08);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            border-color: rgba(240,136,62,0.4);
+            background: rgba(240,136,62,0.1);
+        }
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 140px 20px 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(88,166,255,0.1);
+            border: 1px solid rgba(88,166,255,0.3);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.8em;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            animation: pulse-border-blue 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-border-blue {
+            0%, 100% { border-color: rgba(88,166,255,0.3); box-shadow: 0 0 0 0 rgba(88,166,255,0); }
+            50% { border-color: rgba(88,166,255,0.7); box-shadow: 0 0 20px rgba(88,166,255,0.2); }
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2em, 6vw, 3.5em);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            animation: title-glow-blue 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes title-glow-blue {
+            from { filter: drop-shadow(0 0 20px rgba(88,166,255,0.3)); }
+            to { filter: drop-shadow(0 0 40px rgba(88,166,255,0.6)); }
+        }
+
+        .hero-subtitle {
+            color: var(--text-dim);
+            font-size: 1em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .meta-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(22,27,34,0.8);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 0.8em;
+            color: var(--text-dim);
+        }
+
+        .meta-chip .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toc::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--primary), #7b68ee);
+        }
+
+        .toc-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 8px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: rgba(88,166,255,0.07);
+            border-color: rgba(88,166,255,0.2);
+            color: var(--primary);
+        }
+
+        .toc-num {
+            font-size: 0.75em;
+            font-weight: 700;
+            background: rgba(88,166,255,0.15);
+            color: var(--primary);
+            padding: 2px 7px;
+            border-radius: 4px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--teal), var(--primary));
+            border-radius: 0 0 0 16px;
+        }
+
+        .section:hover {
+            border-color: rgba(88,166,255,0.25);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(88,166,255,0.05);
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section-num {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6em;
+            font-weight: 900;
+            color: rgba(88,166,255,0.15);
+            line-height: 1;
+            min-width: 50px;
+        }
+
+        .section-info { flex: 1; }
+
+        .section-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .icon { font-size: 1.1em; }
+
+        .section-desc {
+            font-size: 0.82em;
+            color: var(--text-dim);
+        }
+
+        .section ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .section ul li {
+            padding: 10px 0 10px 24px;
+            border-bottom: 1px solid rgba(48,54,61,0.5);
+            font-size: 0.93em;
+            color: var(--text);
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .section ul li:last-child { border-bottom: none; }
+
+        .section ul li::before {
+            content: '›';
+            position: absolute;
+            left: 6px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .section ul li b { color: #fff; font-weight: 600; }
+
+        .section ul li code {
+            background: rgba(88,166,255,0.1);
+            border: 1px solid rgba(88,166,255,0.2);
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-size: 0.88em;
+            color: var(--primary);
+            font-family: monospace;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.87em;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: rgba(88,166,255,0.1);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(88,166,255,0.2);
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(48,54,61,0.4);
+            color: var(--text);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table tr:hover td { background: rgba(88,166,255,0.03); }
+
+        .highlight-box {
+            background: rgba(248,81,73,0.08);
+            border: 1px solid rgba(248,81,73,0.25);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 16px;
+            font-size: 0.88em;
+            color: #ff8a80;
+            display: flex;
+            gap: 10px;
+        }
+
+        .green-box {
+            background: rgba(63,185,80,0.08);
+            border: 1px solid rgba(63,185,80,0.25);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 16px;
+            font-size: 0.88em;
+            color: #a8f0a0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .info-box {
+            background: rgba(88,166,255,0.08);
+            border: 1px solid rgba(88,166,255,0.25);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 16px;
+            font-size: 0.88em;
+            color: #90caf9;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-sep {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0 40px;
+        }
+
+        .lang-sep::before, .lang-sep::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .lang-sep-inner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card2);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 8px 20px;
+            white-space: nowrap;
+        }
+
+        .lang-sep-inner span {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* EN sections use orange accent */
+        .section.en::before {
+            background: linear-gradient(180deg, var(--accent2), var(--accent));
+        }
+
+        .section.en .section-title { color: var(--accent); }
+        .section.en .toc-num { background: rgba(240,136,62,0.15); color: var(--accent); }
+        .section.en ul li::before { color: var(--accent); }
+        .section.en:hover {
+            border-color: rgba(240,136,62,0.25);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(240,136,62,0.05);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-inner { max-width: 900px; margin: auto; }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--teal), var(--primary), #7b68ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: 3px;
+        }
+
+        .footer-text { color: var(--text-dim); font-size: 0.85em; margin-bottom: 20px; }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.83em;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            border-color: rgba(88,166,255,0.4);
+        }
+
+        .footer-copy { color: #4a5568; font-size: 0.78em; }
+
+        #back-top {
+            position: fixed;
+            bottom: 28px; right: 24px;
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--teal), var(--primary));
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(88,166,255,0.4);
+        }
+
+        #back-top.show { opacity: 1; transform: translateY(0) scale(1); }
+        #back-top:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 30px rgba(88,166,255,0.6); }
+
+        @media (max-width: 600px) {
+            .hero { padding: 120px 16px 60px; }
+            .section { padding: 24px 20px; }
+            .toc { padding: 20px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.78em; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="nav">
-            <a href="/">📜 Điều Khoản</a>
-            <a href="/privacy.html" class="active">🛡️ Bảo Mật</a>
-        </div>
 
-        <h1>🛡️ Chính Sách Bảo Mật</h1>
-        
-        <h2>01. Thu Thập Dữ Liệu</h2>
-        <ul>
-            <li>Chúng tôi chỉ lưu trữ thông tin công khai từ Discord: <b>User ID, Username, Global Name</b> và <b>Avatar URL</b>.</li>
-            <li>Dữ liệu kinh tế (Xu, Streak 🔥) được lưu trữ cục bộ trong tệp <code>users.json</code> trên hệ thống Termux.</li>
-        </ul>
+<div id="progress-bar"></div>
+<canvas id="particle-canvas"></canvas>
 
-        <h2>02. Sử Dụng Thông Tin</h2>
-        <ul>
-            <li>Dữ liệu được dùng để vận hành các tính năng của Bot (Lệnh <code>Dme</code>, <code>Dcash</code>).</li>
-            <li>Cam kết <b>không bao giờ</b> bán hoặc chia sẻ dữ liệu cho bên thứ ba.</li>
-        </ul>
-
-        <h2>03. Quyền Của Người Dùng</h2>
-        <ul>
-            <li>Bạn có quyền kiểm tra hoặc yêu cầu xóa hoàn toàn dữ liệu cá nhân khỏi hệ thống bằng cách liên hệ với Ban Quản Trị.</li>
-        </ul>
-
-        <div class="lang-sep"><span>ENGLISH VERSION</span></div>
-
-        <h1 style="color: #8b949e;">🛡️ Privacy Policy</h1>
-
-        <h2 style="color: #58a6ff; border-color: #58a6ff;">01. Data Collection</h2>
-        <ul>
-            <li>We only store public information from Discord: <b>User ID, Username, Global Name</b>, and <b>Avatar URL</b>.</li>
-            <li>Economy data (Coins, Streak 🔥) is stored locally in the <code>users.json</code> file on our Termux system.</li>
-        </ul>
-
-        <h2 style="color: #58a6ff; border-color: #58a6ff;">02. Data Usage</h2>
-        <ul>
-            <li>Data is used solely to operate Bot features (Commands like <code>Dme</code>, <code>Dcash</code>).</li>
-            <li>We strictly <b>never</b> sell or share your data with any third parties.</li>
-        </ul>
-
-        <h2 style="color: #58a6ff; border-color: #58a6ff;">03. User Rights</h2>
-        <ul>
-            <li>You have the right to access or request the complete deletion of your personal data from our system by contacting the Administration.</li>
-        </ul>
-
-        <div class="footer">
-            © 2026 V I P DRAGON BOT • Secured Privacy Policy
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">🐲 VIP DRAGON</div>
+        <div class="nav-links">
+            <a href="index.html">📜 Điều Khoản</a>
+            <a href="privacy.html" class="active">🛡️ Bảo Mật</a>
         </div>
     </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-badge">🛡️ Privacy Policy</div>
+    <h1 class="hero-title">CHÍNH SÁCH BẢO MẬT</h1>
+    <p class="hero-subtitle">
+        Chúng tôi cam kết bảo vệ quyền riêng tư của bạn. Tài liệu này giải thích cách 
+        <strong>V I P DRAGON Bot</strong> thu thập, sử dụng và bảo vệ dữ liệu của bạn.
+    </p>
+    <div class="hero-meta">
+        <div class="meta-chip"><span class="dot"></span> Bảo mật được đảm bảo</div>
+        <div class="meta-chip">📅 Cập nhật: 09/07/2026</div>
+        <div class="meta-chip">🔖 Phiên bản 2.0</div>
+    </div>
+</div>
+
+<div class="content-wrapper">
+
+    <div class="toc">
+        <div class="toc-title">📋 Mục lục</div>
+        <div class="toc-grid">
+            <a class="toc-item" href="#p1"><span class="toc-num">01</span> Dữ liệu được thu thập</a>
+            <a class="toc-item" href="#p2"><span class="toc-num">02</span> Mục đích sử dụng</a>
+            <a class="toc-item" href="#p3"><span class="toc-num">03</span> Lưu trữ & Bảo mật</a>
+            <a class="toc-item" href="#p4"><span class="toc-num">04</span> Chia sẻ dữ liệu</a>
+            <a class="toc-item" href="#p5"><span class="toc-num">05</span> Quyền của người dùng</a>
+            <a class="toc-item" href="#p6"><span class="toc-num">06</span> Cookie & Tracking</a>
+            <a class="toc-item" href="#p7"><span class="toc-num">07</span> Dữ liệu của trẻ em</a>
+            <a class="toc-item" href="#p8"><span class="toc-num">08</span> Thay đổi chính sách</a>
+        </div>
+    </div>
+
+    <!-- ═══ VIETNAMESE VERSION ═══ -->
+
+    <section class="section" id="p1">
+        <div class="section-header">
+            <div class="section-num">01</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">📊</span> Dữ Liệu Được Thu Thập</div>
+                <div class="section-desc">Loại thông tin mà V I P DRAGON Bot lưu trữ</div>
+            </div>
+        </div>
+        <ul>
+            <li><b>Discord User ID:</b> Mã định danh duy nhất của tài khoản Discord, dùng để nhận diện và quản lý dữ liệu kinh tế.</li>
+            <li><b>Username / Display Name:</b> Tên hiển thị trên Discord, dùng để hiển thị trong các embed và thống kê.</li>
+            <li><b>Avatar URL:</b> Đường dẫn ảnh đại diện từ CDN của Discord, chỉ dùng để hiển thị trong embed thông tin.</li>
+            <li><b>Dữ liệu kinh tế:</b> Số dư xu (<code>balance</code>), ngày điểm danh cuối (<code>last_daily</code>), chuỗi điểm danh (<code>streak</code>).</li>
+            <li><b>Trạng thái tài khoản:</b> Trường <code>is_banned</code> ghi nhận trạng thái ban của người dùng.</li>
+            <li>Chúng tôi <b>KHÔNG thu thập</b>: địa chỉ email, số điện thoại, thông tin thanh toán, địa chỉ IP, hoặc bất kỳ thông tin nhạy cảm nào khác.</li>
+        </ul>
+        <table class="data-table">
+            <tr>
+                <th>Loại dữ liệu</th>
+                <th>Mục đích</th>
+                <th>Bắt buộc?</th>
+            </tr>
+            <tr><td>Discord User ID</td><td>Nhận diện tài khoản</td><td>✅ Có</td></tr>
+            <tr><td>Username</td><td>Hiển thị trong embed</td><td>✅ Có</td></tr>
+            <tr><td>Avatar URL</td><td>Hiển thị ảnh đại diện</td><td>⚡ Tùy chọn</td></tr>
+            <tr><td>Balance / Streak</td><td>Hệ thống kinh tế</td><td>✅ Có</td></tr>
+            <tr><td>Last Daily</td><td>Quản lý điểm danh</td><td>✅ Có</td></tr>
+            <tr><td>Is Banned</td><td>Kiểm soát truy cập</td><td>⚡ Tùy chọn</td></tr>
+        </table>
+    </section>
+
+    <section class="section" id="p2">
+        <div class="section-header">
+            <div class="section-num">02</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🎯</span> Mục Đích Sử Dụng Dữ Liệu</div>
+                <div class="section-desc">Tại sao chúng tôi cần dữ liệu của bạn</div>
+            </div>
+        </div>
+        <ul>
+            <li><b>Vận hành hệ thống kinh tế:</b> Lưu trữ và xử lý số dư xu, streak điểm danh để các lệnh <code>Ddaily</code>, <code>Dme</code>, <code>Dcash</code> hoạt động chính xác.</li>
+            <li><b>Cá nhân hóa trải nghiệm:</b> Hiển thị tên và ảnh đại diện trong các embed để tạo trải nghiệm tương tác cá nhân hơn.</li>
+            <li><b>Kiểm soát bảo mật:</b> Xác minh trạng thái tài khoản (<code>is_banned</code>) trước khi thực thi mỗi lệnh để ngăn chặn lạm dụng hệ thống.</li>
+            <li><b>Chống gian lận:</b> Ghi nhật ký thời gian điểm danh để ngăn chặn lạm dụng lệnh <code>Ddaily</code> nhiều lần trong ngày.</li>
+            <li><b>Cải thiện dịch vụ:</b> Phân tích xu hướng sử dụng chung (không định danh cá nhân) để cải thiện tính năng bot.</li>
+        </ul>
+        <div class="green-box">✅ Cam kết: Dữ liệu của bạn chỉ được dùng đúng mục đích đã liệt kê. Chúng tôi không phân tích, khai thác hay dùng dữ liệu cho bất kỳ mục đích thương mại nào.</div>
+    </section>
+
+    <section class="section" id="p3">
+        <div class="section-header">
+            <div class="section-num">03</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🗄️</span> Lưu Trữ & Bảo Mật Dữ Liệu</div>
+                <div class="section-desc">Dữ liệu được lưu ở đâu và được bảo vệ như thế nào</div>
+            </div>
+        </div>
+        <ul>
+            <li>Toàn bộ dữ liệu được lưu trữ <b>cục bộ</b> trong tệp <code>users.json</code> trên thiết bị chạy bot (Termux/Android) — không có cloud, không có server bên ngoài.</li>
+            <li>Tệp dữ liệu được lưu dưới dạng <b>JSON thuần (plain text)</b> — không mã hóa nội dung. Điều này có nghĩa là bảo mật phụ thuộc vào an toàn vật lý của thiết bị chủ.</li>
+            <li>Dữ liệu <b>chỉ truy cập được</b> bởi quá trình bot đang chạy — không có giao diện web hay API public nào có thể truy xuất trực tiếp.</li>
+            <li>Chúng tôi không sao lưu dữ liệu lên các dịch vụ đám mây của bên thứ ba. Mọi sao lưu (nếu có) đều được thực hiện thủ công và lưu cục bộ.</li>
+            <li>Rủi ro mất dữ liệu có thể xảy ra do <b>hỏng thiết bị, xóa file nhầm hoặc cài đặt lại</b> — không có cơ chế khôi phục tự động.</li>
+        </ul>
+        <div class="info-box">ℹ️ Chúng tôi khuyến nghị không chia sẻ Discord User ID của bạn với bất kỳ ai và báo cáo ngay nếu phát hiện hoạt động bất thường trong tài khoản bot của bạn.</div>
+    </section>
+
+    <section class="section" id="p4">
+        <div class="section-header">
+            <div class="section-num">04</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🤝</span> Chia Sẻ Dữ Liệu</div>
+                <div class="section-desc">Chúng tôi có chia sẻ dữ liệu của bạn không?</div>
+            </div>
+        </div>
+        <ul>
+            <li>Chúng tôi <b>CAM KẾT TUYỆT ĐỐI KHÔNG</b> bán, cho thuê, hoặc trao đổi dữ liệu người dùng cho bất kỳ bên thứ ba nào vì mục đích thương mại.</li>
+            <li>Dữ liệu <b>KHÔNG</b> được chia sẻ với các tổ chức quảng cáo, nhà tuyển dụng dữ liệu, hoặc bất kỳ đơn vị nào ngoài nhóm phát triển bot.</li>
+            <li><b>Trường hợp ngoại lệ duy nhất:</b> Nếu pháp luật yêu cầu cung cấp dữ liệu cho cơ quan có thẩm quyền theo lệnh tòa án hoặc yêu cầu pháp lý hợp pháp.</li>
+            <li>Dữ liệu thô có thể được truy cập bởi <b>Chủ sở hữu và Đồng chủ sở hữu bot</b> trong quá trình quản trị và xử lý vi phạm.</li>
+            <li>Bot sử dụng API của Discord (discord.com) và yt-dlp — các dịch vụ này có chính sách bảo mật riêng độc lập với chúng tôi.</li>
+        </ul>
+        <div class="highlight-box">🚨 Nếu bạn phát hiện dữ liệu của mình bị lộ hoặc bị sử dụng trái phép, hãy liên hệ Ban Quản Trị ngay lập tức.</div>
+    </section>
+
+    <section class="section" id="p5">
+        <div class="section-header">
+            <div class="section-num">05</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">⚖️</span> Quyền Của Người Dùng</div>
+                <div class="section-desc">Bạn có toàn quyền kiểm soát dữ liệu của mình</div>
+            </div>
+        </div>
+        <ul>
+            <li><b>Quyền truy cập:</b> Bạn có quyền yêu cầu xem toàn bộ dữ liệu mà bot đang lưu trữ về bạn — chỉ cần liên hệ Ban Quản Trị với User ID của bạn.</li>
+            <li><b>Quyền chỉnh sửa:</b> Nếu có thông tin sai lệch, bạn có quyền yêu cầu chỉnh sửa sau khi xác minh danh tính.</li>
+            <li><b>Quyền xóa dữ liệu:</b> Bạn có thể yêu cầu xóa hoàn toàn tất cả dữ liệu của mình khỏi hệ thống bất kỳ lúc nào. Lưu ý: xóa dữ liệu đồng nghĩa mất toàn bộ xu và streak.</li>
+            <li><b>Quyền từ chối:</b> Bạn có thể ngừng sử dụng bot bất kỳ lúc nào — dữ liệu của bạn sẽ được giữ trong <b>90 ngày</b> sau khi không hoạt động trước khi bị xóa tự động.</li>
+            <li><b>Quyền khiếu nại:</b> Nếu bạn không đồng ý với cách xử lý dữ liệu, bạn có quyền liên hệ Ban Quản Trị để khiếu nại và nhận phản hồi.</li>
+        </ul>
+        <div class="green-box">✅ Để thực hiện bất kỳ quyền nào ở trên, hãy gửi tin nhắn trực tiếp cho Ban Quản Trị trên Discord, kèm theo Discord User ID và yêu cầu cụ thể. Chúng tôi sẽ phản hồi trong vòng 48 giờ.</div>
+    </section>
+
+    <section class="section" id="p6">
+        <div class="section-header">
+            <div class="section-num">06</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🔍</span> Cookie & Tracking</div>
+                <div class="section-desc">Trang web và bot có theo dõi bạn không?</div>
+            </div>
+        </div>
+        <ul>
+            <li>Trang web (<code>idl-tan.vercel.app</code>) là <b>trang tĩnh (static site)</b> — không sử dụng cookie, không có hệ thống tracking, không có analytics.</li>
+            <li>Bot Discord <b>không theo dõi</b> hoạt động trò chuyện ngoài các lệnh trực tiếp gửi đến bot (prefix <code>D</code>).</li>
+            <li>Bot không lưu lịch sử hội thoại, không phân tích nội dung tin nhắn thường, không ghi nhận hành vi duyệt web của bạn.</li>
+            <li>Khi bạn @tag bot, bot chỉ đọc <b>nội dung của tin nhắn đó</b> để xử lý phản ứng emoji — không lưu trữ nội dung.</li>
+            <li>Vercel (nền tảng host website) có thể ghi nhật ký truy cập cơ bản theo <b>chính sách riêng của họ</b> — chúng tôi không kiểm soát dữ liệu này.</li>
+        </ul>
+        <div class="info-box">ℹ️ Trang web này hoàn toàn không sử dụng Google Analytics, Facebook Pixel, hay bất kỳ công cụ tracking bên thứ ba nào.</div>
+    </section>
+
+    <section class="section" id="p7">
+        <div class="section-header">
+            <div class="section-num">07</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">👶</span> Bảo Vệ Dữ Liệu Trẻ Em</div>
+                <div class="section-desc">Chính sách đặc biệt về dữ liệu người dùng dưới 13 tuổi</div>
+            </div>
+        </div>
+        <ul>
+            <li>V I P DRAGON Bot <b>không cố ý thu thập dữ liệu</b> từ trẻ em dưới 13 tuổi theo quy định của Discord và COPPA (Children's Online Privacy Protection Act).</li>
+            <li>Nếu bạn dưới 13 tuổi, bạn <b>không được phép sử dụng bot</b> theo Điều Khoản Dịch Vụ của Discord.</li>
+            <li>Nếu Ban Quản Trị phát hiện dữ liệu của người dùng dưới 13 tuổi đã được lưu trữ, dữ liệu đó sẽ được <b>xóa ngay lập tức</b>.</li>
+            <li>Phụ huynh hoặc người giám hộ phát hiện con em dưới 13 tuổi đang sử dụng bot có thể yêu cầu xóa dữ liệu bằng cách liên hệ Ban Quản Trị.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="p8">
+        <div class="section-header">
+            <div class="section-num">08</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🔄</span> Thay Đổi Chính Sách</div>
+                <div class="section-desc">Cách chúng tôi cập nhật chính sách bảo mật</div>
+            </div>
+        </div>
+        <ul>
+            <li>Chính Sách Bảo Mật này có thể được cập nhật bất kỳ lúc nào để phản ánh những thay đổi trong cách vận hành bot hoặc yêu cầu pháp lý.</li>
+            <li>Phiên bản mới nhất luôn được công bố trên trang này (<code>idl-tan.vercel.app/privacy.html</code>) với ngày cập nhật ở đầu trang.</li>
+            <li>Những thay đổi quan trọng ảnh hưởng đến quyền lợi người dùng sẽ được <b>thông báo trong máy chủ Discord</b> chính thức.</li>
+            <li>Việc tiếp tục sử dụng bot sau khi chính sách cập nhật đồng nghĩa với việc bạn <b>chấp nhận phiên bản mới</b>.</li>
+            <li>Nếu bạn không đồng ý với chính sách mới, vui lòng ngừng sử dụng bot và yêu cầu xóa dữ liệu.</li>
+        </ul>
+    </section>
+
+    <!-- ═══ LANGUAGE SEPARATOR ═══ -->
+    <div class="lang-sep">
+        <div class="lang-sep-inner">
+            <span>🌐</span>
+            <span>ENGLISH VERSION</span>
+            <span>🌐</span>
+        </div>
+    </div>
+
+    <!-- ═══ ENGLISH VERSION ═══ -->
+
+    <section class="section en" id="ep1">
+        <div class="section-header">
+            <div class="section-num">01</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">📊</span> Data We Collect</div>
+                <div class="section-desc">Types of information V I P DRAGON Bot stores</div>
+            </div>
+        </div>
+        <ul>
+            <li><b>Discord User ID:</b> Your unique Discord account identifier, used to recognize and manage your economy data.</li>
+            <li><b>Username / Display Name:</b> Your Discord display name, used for showing in embeds and statistics.</li>
+            <li><b>Avatar URL:</b> Your Discord CDN avatar link, used solely for display in information embeds.</li>
+            <li><b>Economy data:</b> Coin balance (<code>balance</code>), last check-in date (<code>last_daily</code>), check-in streak (<code>streak</code>).</li>
+            <li><b>Account status:</b> The <code>is_banned</code> field records the ban status of a user.</li>
+            <li>We do <b>NOT collect</b>: email addresses, phone numbers, payment information, IP addresses, or any other sensitive data.</li>
+        </ul>
+        <table class="data-table">
+            <tr>
+                <th>Data type</th>
+                <th>Purpose</th>
+                <th>Required?</th>
+            </tr>
+            <tr><td>Discord User ID</td><td>Account identification</td><td>✅ Yes</td></tr>
+            <tr><td>Username</td><td>Display in embeds</td><td>✅ Yes</td></tr>
+            <tr><td>Avatar URL</td><td>Display avatar</td><td>⚡ Optional</td></tr>
+            <tr><td>Balance / Streak</td><td>Economy system</td><td>✅ Yes</td></tr>
+            <tr><td>Last Daily</td><td>Check-in management</td><td>✅ Yes</td></tr>
+            <tr><td>Is Banned</td><td>Access control</td><td>⚡ Optional</td></tr>
+        </table>
+    </section>
+
+    <section class="section en" id="ep2">
+        <div class="section-header">
+            <div class="section-num">02</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🎯</span> How We Use Your Data</div>
+                <div class="section-desc">Why we need your information</div>
+            </div>
+        </div>
+        <ul>
+            <li><b>Economy system operation:</b> Storing and processing coin balances, daily streaks so that <code>Ddaily</code>, <code>Dme</code>, <code>Dcash</code> commands work correctly.</li>
+            <li><b>Experience personalization:</b> Displaying your name and avatar in embeds to create a more personalized interaction.</li>
+            <li><b>Security control:</b> Verifying account status (<code>is_banned</code>) before executing each command to prevent system abuse.</li>
+            <li><b>Anti-fraud:</b> Logging check-in timestamps to prevent <code>Ddaily</code> command abuse multiple times per day.</li>
+            <li><b>Service improvement:</b> Analyzing general usage trends (non-personally identifiable) to improve bot features.</li>
+        </ul>
+        <div class="green-box">✅ Commitment: Your data is used only for the purposes listed. We do not analyze, mine, or use your data for any commercial purpose.</div>
+    </section>
+
+    <section class="section en" id="ep3">
+        <div class="section-header">
+            <div class="section-num">03</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🗄️</span> Storage & Data Security</div>
+                <div class="section-desc">Where your data lives and how it's protected</div>
+            </div>
+        </div>
+        <ul>
+            <li>All data is stored <b>locally</b> in the <code>users.json</code> file on the device running the bot (Termux/Android) — no cloud, no external servers.</li>
+            <li>Data is stored as <b>plain JSON text</b> — contents are not encrypted. Security depends on the physical security of the host device.</li>
+            <li>Data is <b>only accessible</b> by the running bot process — no public web interface or API can directly access it.</li>
+            <li>We do not back up data to third-party cloud services. Any backups (if performed) are done manually and stored locally.</li>
+            <li>Data loss risks include <b>device failure, accidental file deletion, or reinstallation</b> — there is no automatic recovery mechanism.</li>
+        </ul>
+        <div class="info-box">ℹ️ We recommend not sharing your Discord User ID with anyone and reporting immediately if you notice unusual activity in your bot account.</div>
+    </section>
+
+    <section class="section en" id="ep4">
+        <div class="section-header">
+            <div class="section-num">04</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🤝</span> Data Sharing</div>
+                <div class="section-desc">Do we share your data with anyone?</div>
+            </div>
+        </div>
+        <ul>
+            <li>We make an <b>ABSOLUTE COMMITMENT to NEVER</b> sell, rent, or exchange user data with any third party for commercial purposes.</li>
+            <li>Data is <b>NOT</b> shared with advertising organizations, data brokers, or any entity outside the bot development team.</li>
+            <li><b>The only exception:</b> If legally required to provide data to competent authorities pursuant to a valid court order or legal requirement.</li>
+            <li>Raw data may be accessed by the <b>bot Owner and Co-Owner</b> during administration and violation handling.</li>
+            <li>The bot uses Discord's API (discord.com) and yt-dlp — these services have their own independent privacy policies.</li>
+        </ul>
+        <div class="highlight-box">🚨 If you discover your data has been exposed or used without authorization, contact Administration immediately.</div>
+    </section>
+
+    <section class="section en" id="ep5">
+        <div class="section-header">
+            <div class="section-num">05</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">⚖️</span> Your Rights</div>
+                <div class="section-desc">You have full control over your data</div>
+            </div>
+        </div>
+        <ul>
+            <li><b>Right to access:</b> You may request to view all data the bot stores about you — just contact Administration with your User ID.</li>
+            <li><b>Right to rectification:</b> If there are inaccuracies, you may request corrections after identity verification.</li>
+            <li><b>Right to erasure:</b> You may request complete deletion of all your data from the system at any time. Note: data deletion means losing all coins and streaks.</li>
+            <li><b>Right to opt out:</b> You may stop using the bot at any time — your data will be retained for <b>90 days</b> of inactivity before automatic deletion.</li>
+            <li><b>Right to complain:</b> If you disagree with how your data is handled, you may contact Administration to file a complaint and receive a response.</li>
+        </ul>
+        <div class="green-box">✅ To exercise any of the above rights, send a direct message to Administration on Discord with your Discord User ID and specific request. We will respond within 48 hours.</div>
+    </section>
+
+    <section class="section en" id="ep6">
+        <div class="section-header">
+            <div class="section-num">06</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🔍</span> Cookies & Tracking</div>
+                <div class="section-desc">Does the website or bot track you?</div>
+            </div>
+        </div>
+        <ul>
+            <li>The website (<code>idl-tan.vercel.app</code>) is a <b>static site</b> — no cookies, no tracking systems, no analytics.</li>
+            <li>The Discord bot does <b>not monitor</b> general conversation activity beyond commands directly sent to the bot (prefix <code>D</code>).</li>
+            <li>The bot does not save conversation history, analyze regular message content, or record your web browsing behavior.</li>
+            <li>When you @tag the bot, it only reads <b>the content of that specific message</b> to process the emoji reaction — nothing is stored.</li>
+            <li>Vercel (website host) may log basic access data per <b>their own policies</b> — we do not control this data.</li>
+        </ul>
+        <div class="info-box">ℹ️ This website uses absolutely no Google Analytics, Facebook Pixel, or any third-party tracking tools.</div>
+    </section>
+
+    <section class="section en" id="ep7">
+        <div class="section-header">
+            <div class="section-num">07</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">👶</span> Children's Data Protection</div>
+                <div class="section-desc">Special policy for users under 13 years old</div>
+            </div>
+        </div>
+        <ul>
+            <li>V I P DRAGON Bot does <b>not knowingly collect data</b> from children under 13 per Discord's Terms and COPPA (Children's Online Privacy Protection Act).</li>
+            <li>If you are under 13, you are <b>not permitted to use the bot</b> under Discord's Terms of Service.</li>
+            <li>If Administration discovers data from a user under 13 has been stored, that data will be <b>immediately deleted</b>.</li>
+            <li>Parents or guardians who discover a child under 13 is using the bot may request data deletion by contacting Administration.</li>
+        </ul>
+    </section>
+
+    <section class="section en" id="ep8">
+        <div class="section-header">
+            <div class="section-num">08</div>
+            <div class="section-info">
+                <div class="section-title"><span class="icon">🔄</span> Policy Changes</div>
+                <div class="section-desc">How we update this privacy policy</div>
+            </div>
+        </div>
+        <ul>
+            <li>This Privacy Policy may be updated at any time to reflect changes in bot operations or legal requirements.</li>
+            <li>The latest version is always published on this page (<code>idl-tan.vercel.app/privacy.html</code>) with the update date at the top.</li>
+            <li>Significant changes affecting user rights will be <b>announced in the official Discord server</b>.</li>
+            <li>Continued use of the bot after a policy update constitutes <b>acceptance of the new version</b>.</li>
+            <li>If you do not agree with the new policy, please stop using the bot and request data deletion.</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">🐲 V I P DRAGON</div>
+        <p class="footer-text">Bot Economy & Giải Trí dành cho cộng đồng Discord</p>
+        <div class="footer-links">
+            <a href="index.html">📜 Điều Khoản</a>
+            <a href="privacy.html">🛡️ Bảo Mật</a>
+        </div>
+        <p class="footer-copy">© 2026 V I P DRAGON BOT • Phiên bản 2.0 • Cập nhật 09/07/2026</p>
+    </div>
+</footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+    const bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.width = p + '%';
+        document.getElementById('back-top').classList.toggle('show', h.scrollTop > 400);
+    });
+
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const COLORS = ['#58a6ff', '#39d0d8', '#7b68ee', '#90caf9', '#4fc3f7'];
+
+    class Particle {
+        constructor() { this.reset(); }
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + 20;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedY = Math.random() * 1 + 0.4;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.opacity = Math.random() * 0.4 + 0.1;
+            this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+            this.life = 0;
+            this.maxLife = Math.random() * 200 + 100;
+        }
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            this.life++;
+            if (this.life > this.maxLife || this.y < -20) this.reset();
+        }
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.opacity * (1 - this.life / this.maxLife);
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    const particles = [];
+    for (let i = 0; i < 70; i++) {
+        const p = new Particle();
+        p.y = Math.random() * canvas.height;
+        p.life = Math.random() * p.maxLife;
+        particles.push(p);
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
-
