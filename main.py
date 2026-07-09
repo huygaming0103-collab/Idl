@@ -3,7 +3,6 @@ from discord.ext import commands
 import os
 import random
 import asyncio
-import glob
 import config
 import json
 from datetime import datetime, timedelta
@@ -47,7 +46,6 @@ def get_user(data, user_id):
             "streak": 0,
             "is_banned": False
         }
-    # Đảm bảo field is_banned luôn tồn tại cho user cũ
     if "is_banned" not in data[user_id]:
         data[user_id]["is_banned"] = False
     return data[user_id]
@@ -56,16 +54,13 @@ def get_user(data, user_id):
 # --- SỰ KIỆN BOT ONLINE ---
 @bot.event
 async def on_ready():
-    if not os.path.exists('downloads'):
-        os.makedirs('downloads')
-    print(f'✅ V I P DRAGON Online | Prefix: D')
+    print(f'✅ HDGBot Online | Prefix: D')
 
 
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
         return
-    # Thả emoji ngẫu nhiên khi bị ping
     if bot.user.mentioned_in(message):
         try:
             await message.add_reaction(random.choice(VIP_EMOJIS))
@@ -87,53 +82,6 @@ async def globally_check_banned(ctx):
     return True
 
 
-# --- LỆNH TẢI NHẠC (Dmp3) ---
-@bot.command(name="mp3")
-async def dmp3(ctx, *, url: str):
-    embed = discord.Embed(
-        title="🔥 V I P DRAGON - DOWNLOADER",
-        description="> **Hệ thống đang trích xuất dữ liệu, vui lòng đợi...**",
-        color=0xFF0000
-    )
-    embed.add_field(name="🛰️ Trạng thái", value="`⏳ Đang xử lý...`", inline=True)
-    msg = await ctx.send(embed=embed)
-
-    # Tải nhạc về định dạng MP3 (blocking - chạy trong thread riêng)
-    loop = asyncio.get_event_loop()
-    await loop.run_in_executor(
-        None,
-        lambda: os.system(
-            f'yt-dlp -x --audio-format mp3 -o "downloads/%(title)s.%(ext)s" "{url}"'
-        )
-    )
-
-    # Đợi file hoàn tất
-    await asyncio.sleep(5)
-
-    try:
-        files = glob.glob("downloads/*.mp3")
-        if files:
-            latest_file = max(files, key=os.path.getctime)
-            file_name = os.path.basename(latest_file)
-
-            await msg.delete()
-            await ctx.send(
-                content=f"✅ **Đã tải xong file của bạn!** 🐲🔥🎧\n> 📂 **Tên file:** `{file_name}`",
-                file=discord.File(latest_file)
-            )
-        else:
-            embed.description = "❌ **Lỗi: Không tìm thấy file trong thư mục downloads!**"
-            embed.color = 0xFF0000
-            await msg.edit(embed=embed)
-    except Exception as e:
-        print(f"Lỗi mp3: {e}")
-        try:
-            embed.description = f"❌ **Đã xảy ra lỗi:** `{str(e)}`"
-            await msg.edit(embed=embed)
-        except Exception:
-            pass
-
-
 # --- LỆNH ĐIỂM DANH (Ddaily) ---
 @bot.command(name="daily")
 async def daily(ctx):
@@ -150,7 +98,6 @@ async def daily(ctx):
     last_daily = datetime.strptime(user["last_daily"], "%Y-%m-%d %H:%M:%S")
 
     if last_daily < reset_time:
-        # Kiểm tra chuỗi điểm danh
         if last_daily < (reset_time - timedelta(days=1)):
             user["streak"] = 1
         else:
@@ -172,7 +119,7 @@ async def daily(ctx):
             title="🎁 QUÀ TẶNG MỖI NGÀY",
             description=(
                 f"✅ Bạn đã nhận được **{amount}** xu! (+{streak_bonus} bonus)\n"
-                f"> Tổng nhận: **{total_get}** xu 🐲🔥"
+                f"> Tổng nhận: **{total_get}** xu 🔥"
             ),
             color=0x00FF00
         )
@@ -217,7 +164,7 @@ async def me(ctx):
 
     embed.add_field(name="💰 Số dư xu", value=f"`{balance:,}` xu", inline=True)
     embed.add_field(name="🔥 Chuỗi hiện tại", value=f"`{streak}` ngày", inline=True)
-    embed.set_footer(text="V I P DRAGON ECONOMY • Chăm chỉ để giàu sang!")
+    embed.set_footer(text="HDGBot ECONOMY • Chăm chỉ để giàu sang!")
     await ctx.send(embed=embed)
 
 
@@ -225,7 +172,7 @@ async def me(ctx):
 @bot.command(name="tos")
 async def tos(ctx):
     embed = discord.Embed(
-        title="📜 ĐIỀU KHOẢN & BẢO MẬT - V I P DRAGON",
+        title="📜 ĐIỀU KHOẢN & BẢO MẬT - HDGBot",
         description="Việc sử dụng bot đồng nghĩa với việc bạn đồng ý với các điều khoản dưới đây.",
         color=0x3498db,
         url="https://idl-tan.vercel.app/"
@@ -234,8 +181,7 @@ async def tos(ctx):
         name="⚖️ Quy định chính",
         value=(
             "• Cấm spam lệnh hoặc lợi dụng bug kinh tế.\n"
-            "• Vi phạm sẽ bị reset xu hoặc ban tài khoản.\n"
-            "• Không dùng Dmp3 tải nội dung vi phạm bản quyền."
+            "• Vi phạm sẽ bị reset xu hoặc ban tài khoản."
         ),
         inline=False
     )
@@ -269,9 +215,7 @@ async def ban(ctx, member: discord.Member):
     data[user_id] = user
     save_data(data)
 
-    await ctx.send(
-        f"🚫 Đã ban người dùng **{member.name}**. Họ sẽ không thể sử dụng các lệnh của bot nữa! 🐲🔥"
-    )
+    await ctx.send(f"🚫 Đã ban người dùng **{member.name}**. Họ sẽ không thể sử dụng các lệnh của bot nữa!")
 
 
 # --- LỆNH UNBAN (Chỉ Admin) ---
@@ -289,7 +233,7 @@ async def unban(ctx, member: discord.Member):
     await ctx.send(f"✅ Đã bỏ ban cho **{member.name}**. Chào mừng quay trở lại! ✨")
 
 
-# --- XỬ LÝ LỖI THIẾU QUYỀN ---
+# --- XỬ LÝ LỖI ---
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingPermissions):
@@ -299,7 +243,7 @@ async def on_command_error(ctx, error):
     elif isinstance(error, commands.MissingRequiredArgument):
         await ctx.send(f"❌ Thiếu tham số! Cách dùng: `{ctx.prefix}{ctx.command.name} {ctx.command.signature}`")
     elif isinstance(error, commands.CommandNotFound):
-        pass  # Bỏ qua lệnh không tồn tại
+        pass
 
 
 bot.run(config.TOKEN)
