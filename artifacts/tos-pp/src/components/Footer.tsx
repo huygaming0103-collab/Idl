@@ -5,8 +5,8 @@ export function Footer() {
     <footer className="border-t border-white/5 bg-background/50 backdrop-blur-sm mt-20 pb-20 md:pb-8">
       <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-col items-center md:items-start">
-          <span className="font-display font-bold text-lg text-white">IDL Bot</span>
-          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()} IDL Bot. All rights reserved.</span>
+          <span className="font-display font-bold text-lg text-white">HDGBot</span>
+          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()} HDGBot. All rights reserved.</span>
         </div>
         
         <a 

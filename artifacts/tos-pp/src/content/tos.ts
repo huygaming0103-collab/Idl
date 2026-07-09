@@ -2,24 +2,24 @@ export const tosData = {
   vi: {
     title: "Điều Khoản Dịch Vụ",
     lastUpdated: "09/07/2026",
-    summary: "Bằng cách sử dụng IDL Bot, bạn đồng ý tuân thủ toàn bộ các điều khoản dưới đây. Điều khoản này được thiết kế để bảo vệ cộng đồng và đảm bảo trải nghiệm công bằng cho tất cả người dùng.",
+    summary: "Bằng cách sử dụng HDGBot, bạn đồng ý tuân thủ toàn bộ các điều khoản dưới đây. Điều khoản này được thiết kế để bảo vệ cộng đồng và đảm bảo trải nghiệm công bằng cho tất cả người dùng.",
     sections: [
       {
         id: "acceptance",
         title: "01. Chấp Nhận Điều Khoản",
         icon: "CheckCircle",
-        content: "Sử dụng IDL Bot đồng nghĩa với việc bạn đã đọc, hiểu và chấp nhận toàn bộ điều khoản này. Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng ngừng sử dụng Bot ngay lập tức.",
+        content: "Sử dụng HDGBot đồng nghĩa với việc bạn đã đọc, hiểu và chấp nhận toàn bộ điều khoản này. Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng ngừng sử dụng Bot ngay lập tức.",
         subsections: [
           { title: "Cập nhật điều khoản", content: "Điều khoản có thể được cập nhật bất kỳ lúc nào mà không cần thông báo trước. Việc tiếp tục sử dụng Bot sau khi điều khoản được cập nhật đồng nghĩa với việc bạn chấp nhận các thay đổi đó." },
-          { title: "Miễn trừ trách nhiệm", content: "IDL Bot được cung cấp \"nguyên trạng\" (as-is) và nhóm phát triển không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng Bot." },
-          { title: "Độ tuổi tối thiểu", content: "Bạn phải từ 13 tuổi trở lên để sử dụng IDL Bot, theo đúng Điều khoản Dịch vụ của Discord." }
+          { title: "Miễn trừ trách nhiệm", content: "HDGBot được cung cấp \"nguyên trạng\" (as-is) và nhóm phát triển không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng Bot." },
+          { title: "Độ tuổi tối thiểu", content: "Bạn phải từ 13 tuổi trở lên để sử dụng HDGBot, theo đúng Điều khoản Dịch vụ của Discord." }
         ]
       },
       {
         id: "description",
         title: "02. Mô Tả Dịch Vụ",
         icon: "Info",
-        content: "IDL Bot là một Discord bot cung cấp các tính năng bao gồm: hệ thống kinh tế ảo (tiền tệ, ngân hàng, đầu tư), trò chơi mini (cá cược, câu cá, khai thác), bảng xếp hạng, lệnh giải trí và nhiều tính năng khác.",
+        content: "HDGBot là một Discord bot cung cấp các tính năng bao gồm: hệ thống kinh tế ảo (tiền tệ, ngân hàng, đầu tư), trò chơi mini (cá cược, câu cá, khai thác), bảng xếp hạng, lệnh giải trí và nhiều tính năng khác.",
         subsections: [
           { title: "Tài sản ảo", content: "Bot hoạt động hoàn toàn trong môi trường Discord và không liên quan đến tiền thật, tài sản thật hoặc giao dịch tài chính thực tế. Tất cả tài sản ảo trong Bot (xu, vật phẩm, cấp độ) không có giá trị quy đổi sang tiền thật và không thể chuyển nhượng ra ngoài hệ thống." },
           { title: "Quyền thay đổi dịch vụ", content: "Nhóm phát triển có quyền thêm, sửa, xóa bất kỳ tính năng nào của Bot mà không cần thông báo trước." }
@@ -50,12 +50,12 @@ export const tosData = {
         id: "prohibited",
         title: "05. Hành Vi Bị Cấm",
         icon: "Ban",
-        content: "Bất kỳ hành vi nào dưới đây đều có thể dẫn đến việc tài khoản của bạn bị cấm vĩnh viễn khỏi hệ thống IDL Bot.",
+        content: "Bất kỳ hành vi nào dưới đây đều có thể dẫn đến việc tài khoản của bạn bị cấm vĩnh viễn khỏi hệ thống HDGBot.",
         subsections: [
           { title: "Lợi dụng lỗi (Bug Exploit)", content: "Việc cố tình khai thác bất kỳ lỗi kỹ thuật nào trong hệ thống Bot để trục lợi hoặc thu lợi bất hợp pháp sẽ bị xử lý ngay lập tức. Hình phạt bao gồm: Reset toàn bộ dữ liệu tài khoản, cấm vĩnh viễn." },
           { title: "Spam lệnh", content: "Gửi lệnh liên tục với tần suất cao gây ảnh hưởng đến hiệu suất Bot và trải nghiệm của người dùng khác." },
           { title: "Tự động hóa (Botting/Scripting)", content: "Nghiêm cấm sử dụng script, macro, auto-clicker hoặc bất kỳ công cụ tự động nào để tương tác với Bot." },
-          { title: "Gian lận & Mạo danh", content: "Mọi hình thức gian lận trong các mini-game, sự kiện hoặc hệ thống kinh tế. Giả mạo là thành viên nhóm phát triển IDL Bot hoặc người dùng khác." },
+          { title: "Gian lận & Mạo danh", content: "Mọi hình thức gian lận trong các mini-game, sự kiện hoặc hệ thống kinh tế. Giả mạo là thành viên nhóm phát triển HDGBot hoặc người dùng khác." },
           { title: "Nội dung độc hại", content: "Sử dụng các tính năng của Bot để phát tán nội dung phân biệt chủng tộc, kỳ thị, khiêu dâm hoặc bạo lực." },
           { title: "Tấn công hệ thống", content: "Bất kỳ hành vi nào nhằm tấn công, phá hoại hoặc làm gián đoạn hoạt động của Bot." }
         ]
@@ -64,7 +64,7 @@ export const tosData = {
         id: "economy",
         title: "06. Hệ Thống Kinh Tế Ảo",
         icon: "Coins",
-        content: "Tất cả tiền tệ và tài sản trong IDL Bot là hoàn toàn ảo và không có giá trị thực tế.",
+        content: "Tất cả tiền tệ và tài sản trong HDGBot là hoàn toàn ảo và không có giá trị thực tế.",
         subsections: [
           { title: "Quản lý hệ thống", content: "Nhóm phát triển có toàn quyền điều chỉnh, reset hoặc xóa bất kỳ tài sản ảo nào khi cần thiết để duy trì sự cân bằng của hệ thống. Dữ liệu kinh tế của người dùng có thể bị reset trong các trường hợp: vi phạm điều khoản, cập nhật hệ thống lớn, hoặc khi cần thiết." },
           { title: "Cấm giao dịch bằng tiền thật", content: "Việc \"mua bán\" tài sản ảo bằng tiền thật giữa người dùng là bị cấm và không được nhóm phát triển bảo đảm hay chịu trách nhiệm." },
@@ -105,7 +105,7 @@ export const tosData = {
         id: "liability",
         title: "10. Giới Hạn Trách Nhiệm",
         icon: "AlertTriangle",
-        content: "IDL Bot được cung cấp \"nguyên trạng\" mà không có bất kỳ bảo đảm nào, dù rõ ràng hay ngầm hiểu.",
+        content: "HDGBot được cung cấp \"nguyên trạng\" mà không có bất kỳ bảo đảm nào, dù rõ ràng hay ngầm hiểu.",
         subsections: [
           { title: "Miễn trừ trách nhiệm thiệt hại", content: "Nhóm phát triển không chịu trách nhiệm về bất kỳ thiệt hại trực tiếp, gián tiếp, ngẫu nhiên, đặc biệt hoặc do hậu quả nào phát sinh từ việc sử dụng hoặc không thể sử dụng Bot." },
           { title: "Đảm bảo dịch vụ", content: "Nhóm phát triển không đảm bảo Bot sẽ hoạt động liên tục, không có lỗi hoặc bảo mật hoàn toàn. Trong mọi trường hợp, trách nhiệm tối đa của nhóm phát triển với bất kỳ người dùng nào không vượt quá giá trị bằng không (0) vì dịch vụ được cung cấp miễn phí." }
@@ -144,24 +144,24 @@ export const tosData = {
   en: {
     title: "Terms of Service",
     lastUpdated: "July 09, 2026",
-    summary: "By using IDL Bot, you agree to abide by all the terms below. These terms are designed to protect the community and ensure a fair experience for all users.",
+    summary: "By using HDGBot, you agree to abide by all the terms below. These terms are designed to protect the community and ensure a fair experience for all users.",
     sections: [
       {
         id: "acceptance",
         title: "01. Acceptance of Terms",
         icon: "CheckCircle",
-        content: "Using IDL Bot means you have read, understood, and accepted all these terms. If you do not agree to any term, please stop using the Bot immediately.",
+        content: "Using HDGBot means you have read, understood, and accepted all these terms. If you do not agree to any term, please stop using the Bot immediately.",
         subsections: [
           { title: "Term Updates", content: "Terms may be updated at any time without prior notice. Continued use of the Bot after terms are updated constitutes your acceptance of those changes." },
-          { title: "Disclaimer", content: "IDL Bot is provided \"as-is\" and the development team is not responsible for any damages arising from the use of the Bot." },
-          { title: "Minimum Age", content: "You must be 13 years or older to use IDL Bot, in accordance with Discord's Terms of Service." }
+          { title: "Disclaimer", content: "HDGBot is provided \"as-is\" and the development team is not responsible for any damages arising from the use of the Bot." },
+          { title: "Minimum Age", content: "You must be 13 years or older to use HDGBot, in accordance with Discord's Terms of Service." }
         ]
       },
       {
         id: "description",
         title: "02. Description of Service",
         icon: "Info",
-        content: "IDL Bot is a Discord bot that provides features including: a virtual economy system (currency, banking, investing), mini-games (betting, fishing, mining), leaderboards, entertainment commands, and more.",
+        content: "HDGBot is a Discord bot that provides features including: a virtual economy system (currency, banking, investing), mini-games (betting, fishing, mining), leaderboards, entertainment commands, and more.",
         subsections: [
           { title: "Virtual Assets", content: "The Bot operates entirely within the Discord environment and has no connection to real money, real assets, or actual financial transactions. All virtual assets in the Bot (coins, items, levels) have no real-world value and cannot be transferred outside the system." },
           { title: "Right to Modify", content: "The development team reserves the right to add, modify, or remove any features of the Bot without prior notice." }
@@ -192,12 +192,12 @@ export const tosData = {
         id: "prohibited",
         title: "05. Prohibited Behaviors",
         icon: "Ban",
-        content: "Any of the behaviors below may result in your account being permanently banned from the IDL Bot system.",
+        content: "Any of the behaviors below may result in your account being permanently banned from the HDGBot system.",
         subsections: [
           { title: "Bug Exploits", content: "Intentionally exploiting any technical bug in the Bot's system for unfair advantage or illegal gain will be dealt with immediately. Penalties include: Full account data reset, permanent ban." },
           { title: "Command Spamming", content: "Sending commands continuously at a high frequency affecting the Bot's performance and other users' experience." },
           { title: "Automation (Botting/Scripting)", content: "Strictly prohibited to use scripts, macros, auto-clickers, or any automated tools to interact with the Bot." },
-          { title: "Cheating & Impersonation", content: "Any form of cheating in mini-games, events, or the economy system. Impersonating IDL Bot development team members or other users." },
+          { title: "Cheating & Impersonation", content: "Any form of cheating in mini-games, events, or the economy system. Impersonating HDGBot development team members or other users." },
           { title: "Malicious Content", content: "Using the Bot's features to distribute racist, discriminatory, pornographic, or violent content." },
           { title: "System Attacks", content: "Any behavior aimed at attacking, sabotaging, or disrupting the Bot's operations." }
         ]
@@ -206,7 +206,7 @@ export const tosData = {
         id: "economy",
         title: "06. Virtual Economy System",
         icon: "Coins",
-        content: "All currency and assets in IDL Bot are entirely virtual and have no real-world value.",
+        content: "All currency and assets in HDGBot are entirely virtual and have no real-world value.",
         subsections: [
           { title: "System Management", content: "The development team has full authority to adjust, reset, or delete any virtual assets when necessary to maintain system balance. User economy data may be reset in cases of: rule violations, major system updates, or when deemed necessary." },
           { title: "Real Money Trading Banned", content: "The \"buying and selling\" of virtual assets for real money between users is prohibited and is not guaranteed or supported by the development team." },
@@ -247,7 +247,7 @@ export const tosData = {
         id: "liability",
         title: "10. Limitation of Liability",
         icon: "AlertTriangle",
-        content: "IDL Bot is provided \"as-is\" without any warranties, either express or implied.",
+        content: "HDGBot is provided \"as-is\" without any warranties, either express or implied.",
         subsections: [
           { title: "Damage Exemption", content: "The development team is not liable for any direct, indirect, incidental, special, or consequential damages arising out of the use or inability to use the Bot." },
           { title: "Service Guarantees", content: "The development team does not guarantee the Bot will operate continuously, error-free, or fully secure. In any case, the maximum liability of the development team to any user shall not exceed zero (0) as the service is provided for free." }

@@ -2,7 +2,7 @@ export const privacyData = {
   vi: {
     title: "Chính Sách Bảo Mật",
     lastUpdated: "09/07/2026",
-    summary: "Bảo vệ dữ liệu cá nhân của bạn là ưu tiên hàng đầu của chúng tôi. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn khi bạn sử dụng IDL Bot.",
+    summary: "Bảo vệ dữ liệu cá nhân của bạn là ưu tiên hàng đầu của chúng tôi. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn khi bạn sử dụng HDGBot.",
     sections: [
       {
         id: "data_collected",
@@ -66,7 +66,7 @@ export const privacyData = {
         icon: "Baby",
         content: "Chúng tôi tuân thủ các quy định về độ tuổi tối thiểu.",
         subsections: [
-          { title: "Giới hạn độ tuổi", content: "IDL Bot không được thiết kế để thu thập dữ liệu của trẻ em dưới 13 tuổi. Theo Điều khoản Dịch vụ của Discord, người dùng phải từ 13 tuổi trở lên." },
+          { title: "Giới hạn độ tuổi", content: "HDGBot không được thiết kế để thu thập dữ liệu của trẻ em dưới 13 tuổi. Theo Điều khoản Dịch vụ của Discord, người dùng phải từ 13 tuổi trở lên." },
           { title: "Báo cáo vi phạm", content: "Nếu bạn phát hiện trẻ em dưới 13 tuổi đang sử dụng Bot, vui lòng báo cáo ngay." }
         ]
       },
@@ -76,7 +76,7 @@ export const privacyData = {
         icon: "Cookie",
         content: "Chúng tôi tôn trọng quyền riêng tư khi bạn duyệt web.",
         subsections: [
-          { title: "Chính sách Cookie", content: "IDL Bot là ứng dụng Discord và không sử dụng cookie. Website này (trang điều khoản/chính sách) không thu thập dữ liệu cá nhân qua tracking." }
+          { title: "Chính sách Cookie", content: "HDGBot là ứng dụng Discord và không sử dụng cookie. Website này (trang điều khoản/chính sách) không thu thập dữ liệu cá nhân qua tracking." }
         ]
       },
       {
@@ -102,7 +102,7 @@ export const privacyData = {
   en: {
     title: "Privacy Policy",
     lastUpdated: "July 09, 2026",
-    summary: "Protecting your personal data is our top priority. This policy explains how we collect, use, and safeguard your information when you use IDL Bot.",
+    summary: "Protecting your personal data is our top priority. This policy explains how we collect, use, and safeguard your information when you use HDGBot.",
     sections: [
       {
         id: "data_collected",
@@ -166,7 +166,7 @@ export const privacyData = {
         icon: "Baby",
         content: "We comply with minimum age requirements.",
         subsections: [
-          { title: "Age Limit", content: "IDL Bot is not designed to collect data from children under 13. According to Discord's Terms of Service, users must be 13 years or older." },
+          { title: "Age Limit", content: "HDGBot is not designed to collect data from children under 13. According to Discord's Terms of Service, users must be 13 years or older." },
           { title: "Reporting Violations", content: "If you find a child under 13 using the Bot, please report it immediately." }
         ]
       },
@@ -176,7 +176,7 @@ export const privacyData = {
         icon: "Cookie",
         content: "We respect your privacy while browsing.",
         subsections: [
-          { title: "Cookie Policy", content: "IDL Bot is a Discord application and does not use cookies. This website (terms/policy page) does not collect personal data via tracking." }
+          { title: "Cookie Policy", content: "HDGBot is a Discord application and does not use cookies. This website (terms/policy page) does not collect personal data via tracking." }
         ]
       },
       {
